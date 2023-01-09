@@ -22,6 +22,8 @@ type sedan struct {
 	Fourwheel bool
 	color     string
 }
+
+// 6.4
 type square struct {
 	length  int
 	breadth int
@@ -49,6 +51,7 @@ func info(i shape) float64 {
 	// i.area()
 	return i.area()
 }
+//start the main function
 func main() {
 	Maybach := sedan{
 
