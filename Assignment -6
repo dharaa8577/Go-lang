@@ -1,0 +1,92 @@
+package main
+
+import "fmt"
+
+type vehicle struct {
+	Doors int
+	color string
+}
+
+//6.3.2
+
+type truck struct {
+	truck     string
+	Fourwheel bool
+	color     string
+}
+
+//6.3.3
+
+type sedan struct {
+	door      string
+	Fourwheel bool
+	color     string
+}
+type square struct {
+	length  int
+	breadth int
+}
+
+type circle struct {
+	radius float64
+}
+
+func (x square) area() float64 {
+	// fmt.Println(x.length * x.breadth)
+	return float64(x.length) * float64(x.breadth)
+}
+
+func (x circle) area() float64 {
+	// fmt.Println(3.14 * x.radius * x.radius)
+	return 3.14 * x.radius * x.radius
+}
+
+type shape interface {
+	area() float64
+}
+
+func info(i shape) float64 {
+	// i.area()
+	return i.area()
+}
+func main() {
+	Maybach := sedan{
+
+		door:      "Fourdoor",
+		Fourwheel: true,
+		color:     "Grey",
+	}
+	fmt.Println(Maybach)
+
+	var Accord vehicle
+
+	Accord.Doors = 4
+	Accord.color = "Grey"
+
+	fmt.Println(Accord)
+
+	ford := truck{
+
+		truck:     "Sixdoor",
+		Fourwheel: false,
+		color:     "Red",
+	}
+	fmt.Println(ford)
+
+	sqrvalues := square{
+		length:  10,
+		breadth: 10,
+	}
+
+	circvalues := circle{
+		radius: 10,
+	}
+
+	fmt.Println(info(sqrvalues))
+	fmt.Println(info(circvalues))
+
+	// p := info(sqrvalues)
+	// info(sqrvalues)
+	// info(circvalues)
+
+}
