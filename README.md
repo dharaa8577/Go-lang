@@ -62,21 +62,22 @@ func main() {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 6.3.2
-
 package main
 
 import "fmt"
 
 type truck struct {
-	vehicle   int
-	Fourwheel string
+	truck     string
+	Fourwheel bool
+	color     string
 }
 
 func main() {
-	var ford truck
+	ford := truck{
 
-	ford.vehicle = 4
-	ford.Fourwheel = "No"
-
+		truck:     "Sixdoor",
+		Fourwheel: false,
+		color:     "Red",
+	}
 	fmt.Println(ford)
 }
